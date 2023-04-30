@@ -35,15 +35,10 @@ call jetpack#end()
 
 "settings of ddc.vim
 call ddc#custom#patch_global('ui', 'pum')
-call ddc#custom#patch_global('sources', ['around', 'mocword'])
+call ddc#custom#patch_global('sources', ['around',])
 call ddc#custom#patch_global('sourceOptions', {
   \ 'around': {
   \   'mark': 'around',
-  \ },
-  \ 'mocword': {
-  \   'mark': 'mocword',
-  \   'minAutoCompleteLength': 3,
-  \   'isVolatile': v:true,
   \ },
   \ '_': {
   \   'matchers': ['matcher_head'],
