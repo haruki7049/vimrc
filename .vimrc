@@ -57,7 +57,6 @@ endif
 
 "settings of ddc.vim
 call ddc#custom#patch_global('ui', 'pum')
-call ddc#custom#patch_global('sources', ['around',])
 call ddc#custom#patch_global('sources', ['around', 'vim-lsp'])
 call ddc#custom#patch_global('sourceOptions', {
   \ 'around': {
