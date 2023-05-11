@@ -16,4 +16,5 @@ if has("autocmd")
   autocmd filetype sh setl tabstop=4 shiftwidth=4 et
   autocmd filetype lua setl tabstop=4 shiftwidth=4 et
   autocmd filetype rust setl tabstop=4 shiftwidth=4 et
+  autocmd filetype haskell setl tabstop=2 shiftwidth=2 et
 endif
