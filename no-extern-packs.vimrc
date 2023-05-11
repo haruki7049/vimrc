@@ -6,10 +6,6 @@ set smartindent
 
 set smarttab
 
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
 filetype plugin indent on
 
 if has("autocmd")
