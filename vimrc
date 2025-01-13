@@ -7,6 +7,7 @@ set textwidth=0
 set autoindent
 set smartindent
 set smarttab
+filetype plugin on
 filetype plugin indent on
 
 set tabstop=4 shiftwidth=4 expandtab
