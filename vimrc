@@ -23,3 +23,10 @@ if has("autocmd")
   autocmd filetype rust setlocal tabstop=4 shiftwidth=4 expandtab
   autocmd filetype haskell setlocal tabstop=2 shiftwidth=2 expandtab
 endif
+
+# vim-jetpack
+
+packadd vim-jetpack
+jetpack#begin()
+Jetpack 'tani/vim-jetpack', {'opt': 1}
+jetpack#end()
