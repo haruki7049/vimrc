@@ -1,3 +1,11 @@
-# my\_vim\_config
+# vimrc
 
-my Vim config. This vimrc uses `vim9script` and XDG Base Directory, so Vim-9.1.0327 or later is needed if you want to use my vim configurations.
+My vimrc.
+
+## How to use
+
+```sh
+# Clone this repo into $XDG_CONFIG_HOME/vim
+# The XDG configuration home is supported by Vim 9.1.0327 or later.
+git clone https://github.com/haruki7049/vimrc.git ~/.config/vim
+```
