@@ -1,5 +1,34 @@
 vim9script
 
+set nocompatible
+
+# Ignore denops version check
+const g:denops_disable_version_check = 1
+
+# Set dpp base path (required)
+const dpp_base: string = "~/.cache/dpp/"
+
+# Set dpp source path (required)
+# NOTE: The plugins must be cloned before
+const dpp_src: string = "~/.cache/dpp/repos/github.com/Shougo/dpp.vim"
+const denops_src: string = "~/.cache/dpp/repos/github.com/vim-denops/denops.vim"
+
+execute 'set runtimepath^=' .. dpp_src
+
+if dpp_base->dpp#min#load_state()
+  # NOTE: dpp#make_state() requires denops.vim
+  # NOTE: denops.vim and dpp plugins are must be added
+  execute 'set runtimepath^=' .. denops_src
+
+  const dpp_config: string = "~/.config/vim/dpp/config.ts"
+
+  autocmd User DenopsReady : echohl WarningMsg | echomsg 'dpp load_state() is failed' | echohl NONE | call dpp#make_state(dpp_base, dpp_config)
+endif
+
+autocmd User Dpp:makeStatePost : echohl WarningMsg | echomsg 'dpp make_state() is done' | echohl NONE
+
+############################################################
+
 set number
 syntax on
 
