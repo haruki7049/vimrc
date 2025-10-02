@@ -6,6 +6,10 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     vim-overlay = {
       url = "github:kawarimidoll/vim-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,7 +21,12 @@
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       systems = import inputs.systems;
 
-      perSystem = { pkgs, system, ... }:
+      imports = [
+        inputs.treefmt-nix.flakeModule
+      ];
+
+      perSystem =
+        { pkgs, system, ... }:
         let
           pkgs = import inputs.nixpkgs {
             inherit system;
@@ -25,6 +34,16 @@
           };
         in
         {
+          treefmt = {
+            projectRootFile = ".git/config";
+
+            # Nix
+            programs.nixfmt.enable = true;
+
+            # TOML
+            programs.taplo.enable = true;
+          };
+
           devShells.default = pkgs.mkShell {
             packages = [
               # LSP
