@@ -55,6 +55,9 @@
               # Runner
               pkgs.nushell
               pkgs.just
+
+              # Plugin fetcher
+              pkgs.git
             ];
           };
         };
