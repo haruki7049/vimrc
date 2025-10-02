@@ -63,6 +63,7 @@ command! DppMakeState :call dpp#make_state(base_path, "~/.config/vim/dpp/config.
 set number
 syntax on
 
+set showtabline=2
 set textwidth=0
 set autoindent
 set smartindent
