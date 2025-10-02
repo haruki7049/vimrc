@@ -15,16 +15,19 @@ const dpp_src: string = "~/.cache/dpp/repos/github.com/Shougo/dpp.vim"
 const denops_src: string = "~/.cache/dpp/repos/github.com/vim-denops/denops.vim"
 const dpp_ext_toml_src: string = "~/.cache/dpp/repos/github.com/Shougo/dpp-ext-toml"
 const dpp_ext_lazy_src: string = "~/.cache/dpp/repos/github.com/Shougo/dpp-ext-lazy"
+const dpp_ext_installer_src: string = "~/.cache/dpp/repos/github.com/Shougo/dpp-ext-installer"
 const dpp_protocol_git_src: string = "~/.cache/dpp/repos/github.com/Shougo/dpp-protocol-git"
 
 utils.EnsureRepoExists("https://github.com/Shougo/dpp.vim.git", dpp_src)
 utils.EnsureRepoExists("https://github.com/vim-denops/denops.vim.git", denops_src)
 utils.EnsureRepoExists("https://github.com/Shougo/dpp-ext-toml.git", dpp_ext_toml_src)
 utils.EnsureRepoExists("https://github.com/Shougo/dpp-ext-lazy.git", dpp_ext_lazy_src)
+utils.EnsureRepoExists("https://github.com/Shougo/dpp-ext-installer.git", dpp_ext_installer_src)
 utils.EnsureRepoExists("https://github.com/Shougo/dpp-protocol-git.git", dpp_protocol_git_src)
 
 execute 'set runtimepath^=' .. dpp_ext_toml_src
 execute 'set runtimepath^=' .. dpp_ext_lazy_src
+execute 'set runtimepath^=' .. dpp_ext_installer_src
 execute 'set runtimepath^=' .. dpp_protocol_git_src
 
 # Add dpp.vim source
@@ -48,6 +51,12 @@ execute 'set runtimepath^=' .. denops_src
 
 autocmd User Dpp:makeStatePost : echohl WarningMsg
   | echomsg 'dpp make_state() is done'
+
+filetype indent plugin on
+
+command! DppInstall :call utils.DppInstall("install")
+command! DppUpdate :call utils.DppInstall("update")
+command! DppMakeState :call dpp#make_state(base_path, "~/.config/vim/dpp/config.ts")
 
 ############################################################
 
