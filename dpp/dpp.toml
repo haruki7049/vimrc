@@ -13,7 +13,3 @@ repo = "Shougo/dpp-ext-installer"
 
 [[plugins]]
 repo = "Shougo/dpp-protocol-git"
-
-# instantly appending vim-fern
-[[plugins]]
-repo = "lambdalisue/vim-fern"

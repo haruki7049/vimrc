@@ -1,0 +1,12 @@
+[[plugins]]
+repo = "luochen1990/rainbow"
+hook_source = """
+  let g:rainbow_active = 1
+"""
+
+[[plugins]]
+repo = "itchyny/lightline.vim"
+hook_source = """
+  set laststatus=2
+  set noshowmode
+"""
