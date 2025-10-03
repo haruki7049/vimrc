@@ -1,8 +1,70 @@
 vim9script
 
+import "./src/utils.vim"
+
+set nocompatible
+
+# Ignore denops version check
+const g:denops_disable_version_check = 1
+
+# Set dpp base path (required)
+const base_path: string = "~/.cache/dpp"
+
+# Source codes
+const dpp_src: string = "~/.cache/dpp/repos/github.com/Shougo/dpp.vim"
+const denops_src: string = "~/.cache/dpp/repos/github.com/vim-denops/denops.vim"
+const dpp_ext_toml_src: string = "~/.cache/dpp/repos/github.com/Shougo/dpp-ext-toml"
+const dpp_ext_lazy_src: string = "~/.cache/dpp/repos/github.com/Shougo/dpp-ext-lazy"
+const dpp_ext_installer_src: string = "~/.cache/dpp/repos/github.com/Shougo/dpp-ext-installer"
+const dpp_protocol_git_src: string = "~/.cache/dpp/repos/github.com/Shougo/dpp-protocol-git"
+
+utils.EnsureRepoExists("https://github.com/Shougo/dpp.vim.git", dpp_src)
+utils.EnsureRepoExists("https://github.com/vim-denops/denops.vim.git", denops_src)
+utils.EnsureRepoExists("https://github.com/Shougo/dpp-ext-toml.git", dpp_ext_toml_src)
+utils.EnsureRepoExists("https://github.com/Shougo/dpp-ext-lazy.git", dpp_ext_lazy_src)
+utils.EnsureRepoExists("https://github.com/Shougo/dpp-ext-installer.git", dpp_ext_installer_src)
+utils.EnsureRepoExists("https://github.com/Shougo/dpp-protocol-git.git", dpp_protocol_git_src)
+
+execute 'set runtimepath^=' .. dpp_ext_toml_src
+execute 'set runtimepath^=' .. dpp_ext_lazy_src
+execute 'set runtimepath^=' .. dpp_ext_installer_src
+execute 'set runtimepath^=' .. dpp_protocol_git_src
+
+# Add dpp.vim source
+execute 'set runtimepath^=' .. dpp_src
+
+if base_path->dpp#min#load_state()
+  # Add denops.vim source
+  execute 'set runtimepath^=' .. denops_src
+
+  const dpp_config: string = expand("~/.config/vim/dpp/config.ts")
+
+  autocmd User DenopsReady
+    | echomsg "denops ready"
+
+  autocmd User DenopsReady
+    | call dpp#make_state(base_path, "~/.config/vim/dpp/config.ts")
+endif
+
+# Add denops.vim source
+execute 'set runtimepath^=' .. denops_src
+
+autocmd User Dpp:makeStatePost : echohl WarningMsg
+  | echomsg 'dpp make_state() is done'
+
+filetype indent plugin on
+
+command! DppInstall :call utils.DppInstallerAction("install")
+command! DppUpdate :call utils.DppInstallerAction("update")
+command! DppReset :call utils.DppReset(base_path)
+command! DppMakeState :call dpp#make_state(base_path, "~/.config/vim/dpp/config.ts")
+
+############################################################
+
 set number
 syntax on
 
+set showtabline=2
 set textwidth=0
 set autoindent
 set smartindent
