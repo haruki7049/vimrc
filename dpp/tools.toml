@@ -39,6 +39,11 @@ repo = "sillybun/vim-repl"
 # fzf & fzf.vim
 [[plugins]]
 repo = "junegunn/fzf"
+hook_source = """
+  const mapleader = "\\<Space>"
+
+  nnoremap <Leader>f <cmd>FZF<CR>
+"""
 
 [[plugins]]
 repo = "junegunn/fzf.vim"
