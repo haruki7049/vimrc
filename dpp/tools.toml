@@ -10,3 +10,22 @@ hook_source = """
   set laststatus=2
   set noshowmode
 """
+
+[[plugins]]
+repo = "vim-skk/skkeleton"
+hook_source = """
+  function! s:skkeleton_init() abort
+    call skkeleton#config({
+      \\ 'eggLikeNewline': v:false
+      \\ })
+  endfunction
+
+  augroup skkeleton-initialize-pre
+    autocmd!
+    autocmd User skkeleton-initialize-pre call s:skkeleton_init()
+  augroup END
+
+  imap <C-j> <Plug>(skkeleton-toggle)
+  cmap <C-j> <Plug>(skkeleton-toggle)
+  tmap <C-j> <Plug>(skkeleton-toggle)
+"""
