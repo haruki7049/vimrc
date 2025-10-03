@@ -52,8 +52,10 @@
               # Editor
               pkgs.vim
 
-              # denops.vim dependency
+              # Vim tools
               pkgs.deno
+              pkgs.fzf
+              pkgs.ripgrep
 
               # Plugin fetcher
               pkgs.git
