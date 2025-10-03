@@ -32,3 +32,13 @@ hook_source = """
   cmap <C-j> <Plug>(skkeleton-toggle)
   tmap <C-j> <Plug>(skkeleton-toggle)
 """
+
+[[plugins]]
+repo = "sillybun/vim-repl"
+
+# fzf & fzf.vim
+[[plugins]]
+repo = "junegunn/fzf"
+
+[[plugins]]
+repo = "junegunn/fzf.vim"
