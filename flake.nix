@@ -52,6 +52,9 @@
               # Editor
               pkgs.vim
 
+              # denops.vim dependency
+              pkgs.deno
+
               # Plugin fetcher
               pkgs.git
             ];
