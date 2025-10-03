@@ -14,9 +14,12 @@ hook_source = """
 [[plugins]]
 repo = "vim-skk/skkeleton"
 hook_source = """
+  let s:jisyo_path = expand("~/.config/vim/src/SKK-JISYO.L")
+
   function! s:skkeleton_init() abort
     call skkeleton#config({
-      \\ 'eggLikeNewline': v:false
+      \\ 'eggLikeNewline': v:false,
+      \\ 'globalDictionaries': [s:jisyo_path],
       \\ })
   endfunction
 
