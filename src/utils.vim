@@ -6,10 +6,17 @@ export def EnsureRepoExists(repo_url: string, dest_path: string)
   endif
 enddef
 
-export def DppInstall(cmd: string)
+export def DppInstallerAction(cmd: string)
   if denops#server#status() == "running"
     call dpp#async_ext_action("installer", cmd)
   else
     echo "denops is not started"
   endif
+enddef
+
+export def DppReset(basePath: string)
+  echo "Deleting " .. basePath .. " ..."
+  system("rm -rf " .. basePath)
+
+  echomsg "Please reboot your Vim..."
 enddef

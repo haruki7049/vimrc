@@ -54,8 +54,9 @@ autocmd User Dpp:makeStatePost : echohl WarningMsg
 
 filetype indent plugin on
 
-command! DppInstall :call utils.DppInstall("install")
-command! DppUpdate :call utils.DppInstall("update")
+command! DppInstall :call utils.DppInstallerAction("install")
+command! DppUpdate :call utils.DppInstallerAction("update")
+command! DppReset :call utils.DppReset(base_path)
 command! DppMakeState :call dpp#make_state(base_path, "~/.config/vim/dpp/config.ts")
 
 ############################################################
