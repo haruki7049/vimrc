@@ -1,2 +1,5 @@
 [[plugins]]
 repo = "Raku/vim-raku"
+
+[[plugins]]
+repo = "ziglang/zig.vim"
