@@ -1,0 +1,5 @@
+[[plugins]]
+repo = "dracula/vim"
+hook_source = """
+  colorscheme dracula
+"""

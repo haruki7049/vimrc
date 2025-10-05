@@ -41,6 +41,7 @@ export class Config extends BaseConfig {
       { name: "/dpp.toml", lazy: false, },
       { name: "/tools.toml", lazy: false, },
       { name: "/language-supports.toml", lazy: false, },
+      { name: "/colorschemes.toml", lazy: false, },
     ];
 
     const toml_promises = toml_files.map(async (toml) => {
