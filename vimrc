@@ -69,8 +69,10 @@ set textwidth=0
 set autoindent
 set smartindent
 set smarttab
-filetype plugin on
-filetype plugin indent on
+
+# MEMO: These GUI configs supposes Linux/X11 environments
+set guioptions=
+set guifont+=UDEV\ Gothic\ NF\ 10
 
 set tabstop=4 shiftwidth=4 expandtab
 
