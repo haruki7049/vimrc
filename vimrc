@@ -61,6 +61,10 @@ command! DppMakeState :call dpp#make_state(base_path, "~/.config/vim/dpp/config.
 
 ############################################################
 
+# Terminal with a pop-up window
+command! Terminal call popup_create(term_start([&shell], { hidden: 1, term_finish: 'close'}), { border: [], minwidth: winwidth(0) / 2, minheight: &lines / 2 })
+nnoremap <leader>t <cmd>Terminal<cr>
+
 set number
 syntax on
 
