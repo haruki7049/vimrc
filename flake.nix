@@ -50,7 +50,7 @@
               pkgs.nil
 
               # Editor
-              pkgs.vim
+              pkgs.vim-full
 
               # Vim tools
               pkgs.deno
