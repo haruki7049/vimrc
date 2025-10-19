@@ -47,3 +47,11 @@ hook_source = """
 
 [[plugins]]
 repo = "junegunn/fzf.vim"
+
+# Vim folding
+[[plugins]]
+repo = "pseewald/vim-anyfold"
+hook_source = '''
+  autocmd Filetype * AnyFoldActivate
+  set foldlevel=99
+'''
