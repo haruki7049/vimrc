@@ -68,6 +68,9 @@ nnoremap <leader>t <cmd>Terminal<cr>
 set number
 syntax on
 
+# EditorConfig support
+packadd editorconfig
+
 set showtabline=2
 set textwidth=0
 set autoindent
