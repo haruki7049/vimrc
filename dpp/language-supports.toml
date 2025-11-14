@@ -6,3 +6,7 @@ repo = "ziglang/zig.vim"
 
 [[plugins]]
 repo = "rust-lang/rust.vim"
+
+# HTML
+[[plugins]]
+repo = "mattn/emmet-vim"
