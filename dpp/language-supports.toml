@@ -10,3 +10,7 @@ repo = "rust-lang/rust.vim"
 # HTML
 [[plugins]]
 repo = "mattn/emmet-vim"
+
+# Clojure
+[[plugins]]
+repo = "liquidz/elin"

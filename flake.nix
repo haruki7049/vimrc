@@ -53,9 +53,10 @@
               pkgs.vim-full
 
               # Vim tools
-              pkgs.deno
-              pkgs.fzf
-              pkgs.ripgrep
+              pkgs.deno # Deno
+              pkgs.babashka # Babashka, a native, fast starting Clojure interpreter
+              pkgs.fzf # Fzf, A fuzzy finder written by Go-lang
+              pkgs.ripgrep # Ripgrep, A faster grep command written by Rust-lang
 
               # Plugin fetcher
               pkgs.git
