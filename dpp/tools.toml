@@ -47,3 +47,11 @@ hook_source = '''
 # Git in Vim
 [[plugins]]
 repo = "tpope/vim-fugitive"
+
+# ctrlp.vim
+[[plugins]]
+repo = "ctrlpvim/ctrlp.vim"
+hook_source = """
+  let g:ctrlp_map = '<leader>f'
+  let g:ctrlp_cmd = 'CtrlP'
+"""
