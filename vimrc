@@ -93,6 +93,7 @@ if has("autocmd")
   autocmd filetype javascript setlocal tabstop=2 shiftwidth=2 expandtab
   autocmd filetype html setlocal tabstop=2 shiftwidth=2 expandtab
   autocmd filetype go setlocal tabstop=8 shiftwidth=8 noexpandtab
+  autocmd filetype vue setlocal tabstop=2 shiftwidth=2 expandtab
 
   # Google java style
   autocmd filetype java setlocal tabstop=2 shiftwidth=2 expandtab
