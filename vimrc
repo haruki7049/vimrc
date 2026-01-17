@@ -78,6 +78,7 @@ set textwidth=0
 set autoindent
 set smartindent
 set smarttab
+set backupcopy=yes
 
 # MEMO: These GUI configs supposes Linux/X11 environments
 set guioptions=
